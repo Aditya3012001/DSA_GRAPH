@@ -1,0 +1,42 @@
+distributed version contol system
+github : it is the cohosting platform for version control system . a company that allows you to host your central repository on a remote server
+git: distributed version control tool.
+features : distributed(local copy) ,compatible,non linear(allows branching),branching,lightweight, speed
+creates tree graph from index 
+faciltiates this to branching
+only vcs that  allows branches
+
+multiple local branches
+master branch starts from the start of the project and contains prosuction quality code
+uses lossless compression techique
+git is written in c (close to assembly )
+sha1 security (crytographical algorithm)
+it creates commit hash for each commit
+
+
+repo: directory or storage space where our projects can live. it can be local folder on comp or storage space on github
+central and local repo bith have .git folder in them
+
+.git folder have all info related to project and all info regarding commits 
+.git contains details of every single change made to codebase
+it is hidden to prevent accidental deletion folder
+
+
+git init : create local repo
+git clone : downloads repo
+
+
+while working the files are in uncompressed format
+
+git status : tells you which files are ready to commit 
+git add : lets you add files to your index
+git commit : refers to recording snapshots of the repository at a given time
+
+what is index?
+
+branching 
+merging 
+rebasing
+
+
+git commit takes the snapshot of the staged project 
