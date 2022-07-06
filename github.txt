@@ -37,3 +37,6 @@ what is index?
 branching 
 merging 
 rebasing
+
+
+git commit takes the snapshot of the staged project 
