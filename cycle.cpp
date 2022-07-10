@@ -6,7 +6,7 @@ bool vis[100000 + 10];
 int dist[100000 + 10];
 int par[100000 + 10];
 int color[100000 + 10];
-bool recstack[100000+10];
+bool recstack[100000 + 10];
 
 void add_edge(int u, int v)
 {
@@ -17,9 +17,9 @@ void add_edge(int u, int v)
 
 bool detect_cycle_directed(int u)
 {
-    // this doesnt work because order of visiting vertices might change 
+    // this doesnt work because order of visiting vertices might change
     // ex 2->1->0
-    // we visit 0 first 
+    // we visit 0 first
     // when we go through 2 it will return true but should return false;
     // hence maintain recursion stack as well
     vis[u] = true;
@@ -34,19 +34,23 @@ bool detect_cycle_directed(int u)
     return false;
 }
 
-bool correct_cycle_undirected(int u){
+bool correct_cycle_directed(int u)
+{
     // this problem can be solved using only one array as well
     // color[x]==1 return true;
     // color[x]==0 go for next vis
     // permanently mark color[u]=2
-    vis[u]=true;
-    recstack[u]=true;
+    vis[u] = true;
+    recstack[u] = true;
 
-    for(auto v:g[u]){
-        if(vis[v]&&recstack[v])return true;
-        if(!vis[v]&&correct_cycle_undirected(v))return true;
+    for (auto v : g[u])
+    {
+        if (vis[v] && recstack[v])
+            return true;
+        if (!vis[v] && correct_cycle_undirected(v))
+            return true;
     }
-    recstack[u]=false;
+    recstack[u] = false;
     return false;
 }
 

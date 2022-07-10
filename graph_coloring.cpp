@@ -51,4 +51,31 @@ bool dfs(int u, int c)
         if (color[v] == -1)
             ans = ans & dfs(v, c ^ 1);
     }
+<<<<<<< HEAD
+=======
+    return ans;
+}
+
+//bfs soltuin
+
+bool bfs(int src){
+    queue<int> q;
+    q.push(src);
+    color[src]=1;
+
+    while(!q.empty()){
+        int u=q.front();
+        q.pop();
+
+        for(auto v:g[u]){
+            if(color[v]==color[u])return false;
+            else if(color[v]==-1){
+                color[v]=1^color[u];
+                q.push(v);
+            }
+        }
+    }
+
+    return true;
+>>>>>>> fifth
 }
